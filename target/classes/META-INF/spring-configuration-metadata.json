@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "ie.nuig.i3market.config.ApplicationProperties",
+      "sourceType": "ie.nuig.i3market.config.ApplicationProperties"
+    },
+    {
+      "name": "application.virtuoso-properties",
+      "type": "ie.nuig.i3market.config.ApplicationProperties$VirtuosoProperties",
+      "sourceType": "ie.nuig.i3market.config.ApplicationProperties",
+      "sourceMethod": "getVirtuosoProperties()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

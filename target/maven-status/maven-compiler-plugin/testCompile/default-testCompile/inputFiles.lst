@@ -1,0 +1,11 @@
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/web/rest/errors/ExceptionTranslatorTestController.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/config/WebConfigurerTest.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/config/WebConfigurerTestController.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/web/rest/AccountResourceIT.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/web/rest/TestUtil.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/web/rest/UserJWTControllerIT.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/web/rest/errors/ExceptionTranslatorIT.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/ArchTest.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/security/jwt/TokenProviderTest.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/security/jwt/JWTFilterTest.java
+/Users/user/Martin-IOT/git/i3market-api/src/test/java/ie/nuig/i3market/security/SecurityUtilsUnitTest.java

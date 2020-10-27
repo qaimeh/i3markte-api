@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ApplicationProperties.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">I 3 Market</a> &gt; <a href="index.source.html" class="el_package">ie.nuig.i3market.config</a> &gt; <span class="el_source">ApplicationProperties.java</span></div><h1>ApplicationProperties.java</h1><pre class="source lang-java linenums">package ie.nuig.i3market.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+/**
+ * Properties specific to I 3 Market.
+ * &lt;p&gt;
+ * Properties are configured in the {@code application.yml} file.
+ * See {@link io.github.jhipster.config.JHipsterProperties} for a good example.
+ */
+@ConfigurationProperties(prefix = &quot;application&quot;, ignoreUnknownFields = false)
+<span class="fc" id="L12">public class ApplicationProperties {</span>
+
+<span class="fc" id="L14">    VirtuosoProperties virtuosoProperties= new VirtuosoProperties();</span>
+
+    public VirtuosoProperties getVirtuosoProperties() {
+<span class="nc" id="L17">        return virtuosoProperties;</span>
+    }
+
+<span class="fc" id="L20">    public static  class VirtuosoProperties{</span>
+        private String url;
+        private String query_interface;
+        private String update_interface;
+        private String username;
+        private String password;
+        private String graph;
+
+        public String getUrl() {
+<span class="nc" id="L29">            return url;</span>
+        }
+
+        public void setUrl(String url) {
+<span class="nc" id="L33">            this.url = url;</span>
+<span class="nc" id="L34">        }</span>
+
+        public String getQuery_interface() {
+<span class="nc" id="L37">            return query_interface;</span>
+        }
+
+        public void setQuery_interface(String query_interface) {
+<span class="nc" id="L41">            this.query_interface = query_interface;</span>
+<span class="nc" id="L42">        }</span>
+
+        public String getUpdate_interface() {
+<span class="nc" id="L45">            return update_interface;</span>
+        }
+
+        public void setUpdate_interface(String update_interface) {
+<span class="nc" id="L49">            this.update_interface = update_interface;</span>
+<span class="nc" id="L50">        }</span>
+
+        public String getUsername() {
+<span class="nc" id="L53">            return username;</span>
+        }
+
+        public void setUsername(String username) {
+<span class="nc" id="L57">            this.username = username;</span>
+<span class="nc" id="L58">        }</span>
+
+        public String getPassword() {
+<span class="nc" id="L61">            return password;</span>
+        }
+
+        public void setPassword(String password) {
+<span class="nc" id="L65">            this.password = password;</span>
+<span class="nc" id="L66">        }</span>
+
+        public String getGraph() {
+<span class="nc" id="L69">            return graph;</span>
+        }
+
+        public void setGraph(String graph) {
+<span class="nc" id="L73">            this.graph = graph;</span>
+<span class="nc" id="L74">        }</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

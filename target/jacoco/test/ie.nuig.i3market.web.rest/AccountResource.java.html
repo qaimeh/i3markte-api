@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">I 3 Market</a> &gt; <a href="index.source.html" class="el_package">ie.nuig.i3market.web.rest</a> &gt; <span class="el_source">AccountResource.java</span></div><h1>AccountResource.java</h1><pre class="source lang-java linenums">package ie.nuig.i3market.web.rest;
+
+import ie.nuig.i3market.security.SecurityUtils;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping(&quot;/api&quot;)
+<span class="nc" id="L17">public class AccountResource {</span>
+
+    private static class AccountResourceException extends RuntimeException {
+    }
+
+    /**
+     * {@code GET  /account} : get the current user.
+     *
+     * @return the current user.
+     * @throws AccountResourceException {@code 500 (Internal Server Error)} if the user couldn't be returned.
+     */
+    @GetMapping(&quot;/account&quot;)
+    public UserVM getAccount() {
+<span class="nc" id="L30">        String login = SecurityUtils.getCurrentUserLogin()</span>
+<span class="nc" id="L31">            .orElseThrow(AccountResourceException::new);</span>
+<span class="nc" id="L32">        Set&lt;String&gt; authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()</span>
+<span class="nc" id="L33">            .map(GrantedAuthority::getAuthority)</span>
+<span class="nc" id="L34">            .collect(Collectors.toSet());</span>
+<span class="nc" id="L35">        return new UserVM(login, authorities);</span>
+    }
+
+    private static class UserVM {
+        private String login;
+        private Set&lt;String&gt; authorities;
+
+        @JsonCreator
+<span class="nc" id="L43">        UserVM(String login, Set&lt;String&gt; authorities) {</span>
+<span class="nc" id="L44">            this.login = login;</span>
+<span class="nc" id="L45">            this.authorities = authorities;</span>
+<span class="nc" id="L46">        }</span>
+
+        public boolean isActivated() {
+<span class="nc" id="L49">            return true;</span>
+        }
+
+        public Set&lt;String&gt; getAuthorities() {
+<span class="nc" id="L53">            return authorities;</span>
+        }
+
+        public String getLogin() {
+<span class="nc" id="L57">            return login;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
